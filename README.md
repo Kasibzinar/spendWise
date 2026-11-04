@@ -2,8 +2,6 @@
 
 \<p align="center">   \<strong>Track your money. Understand your spending. Stay in control.\</strong> \</p>
 
-\<p align="center">   \<img src="[https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)" alt="TypeScript">   \<img src="[https://img.shields.io/badge/Vite-Powered-646CFF?style=for-the-badge&logo=vite&logoColor=white](https://img.shields.io/badge/Vite-Powered-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)" alt="Vite">   \<img src="[https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge](https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge)" alt="Project status"> \</p>
-
 ## 🌟 About SpendWise
 
 **SpendWise** is a simple personal finance application built with TypeScript. It helps users record their income and expenses, monitor their balance, and understand how they spend their money.
