@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SpendWise — a simple personal expense tracker."
+    />
+    <link rel="icon" type="image/svg+xml" href="/spendWiseLogo.svg" />
+    <title>SpendWise — Personal Expense Tracker</title>
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="#overview" aria-label="SpendWise home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 8.5h13.5a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17V5.5A2.5 2.5 0 0 1 6.5 3H17"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M4 8.5h13.5a2.5 2.5 0 0 1 2.5 2.5v2h-5a2.5 2.5 0 0 1 0-5h5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.5 12h.01"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+            <span class="brand-name">Spend<span>Wise</span></span>
+          </a>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-link active" href="#overview">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+                <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+                <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+                <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+              </svg>
+              Overview
+            </a>
+
+            <a class="nav-link" href="#analytics">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 19V5M4 19h17" />
+                <path d="m7 15 4-4 3 2 6-7" />
+                <path d="M16 6h4v4" />
+              </svg>
+              Analytics
+            </a>
+
+            <a class="nav-link" href="#transactions">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 6h13M8 12h13M8 18h13" />
+                <path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01" />
+              </svg>
+              Transactions
+            </a>
+          </nav>
+
+          <button
+            class="button button-primary add-button"
+            id="add-transaction-button"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span class="add-transaction-text">Add transaction</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard" id="overview">
+        <section class="page-heading">
+          <div>
+            <p class="eyebrow">YOUR FINANCIAL SPACE</p>
+            <h1>Overview<span class="heading-period">.</span></h1>
+            <p class="page-subtitle">
+              Track your income and expenses in one place.
+            </p>
+          </div>
+        </section>
+
+        <section class="overview-section" aria-label="Financial overview">
+          <div class="summary-grid">
+            <article class="summary-card balance-card">
+              <div class="summary-top">
+                <div class="summary-label">
+                  <span class="summary-icon balance-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M3.5 8.5h17v11h-17z" />
+                      <path d="M3.5 8.5 6 4.5h12l2.5 4" />
+                      <path d="M15.5 14h.01M7 12.5h3" />
+                    </svg>
+                  </span>
+                  <span>Total balance</span>
+                </div>
+              </div>
+
+              <p class="summary-value" id="balance-value">$0.00</p>
+
+              <div class="summary-footer">
+                <span id="balance-note">0 total transactions</span>
+              </div>
+            </article>
+
+            <article class="summary-card income-card">
+              <div class="summary-top">
+                <div class="summary-label">
+                  <span class="summary-icon income-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 19V5M6.5 10.5 12 5l5.5 5.5" />
+                      <path d="M4 20h16" />
+                    </svg>
+                  </span>
+                  <span>Total income</span>
+                </div>
+              </div>
+
+              <p class="summary-value" id="income-value">$0.00</p>
+
+              <div class="summary-footer">
+                <span id="income-note">0 income transactions</span>
+              </div>
+            </article>
+
+            <article class="summary-card expense-card">
+              <div class="summary-top">
+                <div class="summary-label">
+                  <span class="summary-icon expense-icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 5v14M6.5 13.5 12 19l5.5-5.5" />
+                      <path d="M4 4h16" />
+                    </svg>
+                  </span>
+                  <span>Total expenses</span>
+                </div>
+              </div>
+
+              <p class="summary-value" id="expense-value">$0.00</p>
+
+              <div class="summary-footer">
+                <span id="expense-note">0 expense transactions</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="analytics-section" id="analytics">
+          <div class="section-heading">
+            <div>
+              <div class="section-title-row">
+                <span class="section-icon analytics-heading-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 19V5M4 19h17" />
+                    <path d="m7 15 4-4 3 2 6-7" />
+                    <path d="M16 6h4v4" />
+                  </svg>
+                </span>
+                <h2>Financial analytics</h2>
+              </div>
+              <p class="section-description">
+                A closer look at your monthly cash flow.
+              </p>
+            </div>
+
+            <label class="year-picker">
+              <span class="visually-hidden">Chart year</span>
+              <select id="chart-year"></select>
+            </label>
+          </div>
+
+          <div class="analytics-grid">
+            <article class="panel chart-panel">
+              <div class="panel-heading">
+                <div>
+                  <h3>Cash flow</h3>
+                  <p>Income vs. expenses</p>
+                </div>
+
+                <div class="chart-legend">
+                  <span><i class="legend-dot legend-income"></i>Income</span>
+                  <span><i class="legend-dot legend-expense"></i>Expenses</span>
+                </div>
+              </div>
+
+              <div class="chart-summary">
+                <div>
+                  <span class="chart-summary-label">Income this year</span>
+                  <strong id="chart-income-total">$0.00</strong>
+                </div>
+                <div>
+                  <span class="chart-summary-label">Expenses this year</span>
+                  <strong id="chart-expense-total">$0.00</strong>
+                </div>
+              </div>
+
+              <div class="chart-area" id="monthly-chart" role="img">
+                <div
+                  class="chart-y-axis"
+                  id="chart-y-axis"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="chart-content">
+                  <div class="chart-grid-lines" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span
+                    ><span></span>
+                  </div>
+
+                  <div class="chart-bars" id="chart-bars"></div>
+                </div>
+              </div>
+
+              <p class="chart-note" id="chart-note"></p>
+            </article>
+
+            <article class="panel breakdown-panel">
+              <div class="panel-heading">
+                <div>
+                  <div class="section-title-row compact-title-row">
+                    <span class="section-icon breakdown-heading-icon">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 3.5v8.5h8.5" />
+                        <path d="M19.5 15a8 8 0 1 1-10.5-10.5" />
+                      </svg>
+                    </span>
+                    <h3>Spending breakdown</h3>
+                  </div>
+                  <p>Where your money goes</p>
+                </div>
+              </div>
+
+              <div class="breakdown-total">
+                <span>Total spent</span>
+                <strong id="category-total-value">$0.00</strong>
+              </div>
+
+              <div class="breakdown-track" id="category-breakdown"></div>
+
+              <ul class="category-list" id="category-list"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="transactions-section" id="transactions">
+          <div class="section-heading transactions-heading">
+            <div>
+              <div class="section-title-row">
+                <span class="section-icon transactions-heading-icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M8 6h13M8 12h13M8 18h13" />
+                    <path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01" />
+                  </svg>
+                </span>
+                <h2>Transactions</h2>
+              </div>
+              <p class="section-description">
+                Search, filter, edit or delete your transactions.
+              </p>
+            </div>
+          </div>
+
+          <div class="panel transactions-panel">
+            <div class="filters">
+              <input
+                class="filter-search"
+                id="search-input"
+                type="search"
+                placeholder="Search by title..."
+                aria-label="Search transactions by title"
+                autocomplete="off"
+              />
+
+              <select id="type-filter" aria-label="Filter by type">
+                <option value="all">All types</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+
+              <select
+                id="category-filter"
+                aria-label="Filter by category"
+              ></select>
+            </div>
+
+            <div class="table-scroll" id="table-scroll">
+              <table class="transactions-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Transaction</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="transaction-list"></tbody>
+              </table>
+            </div>
+
+            <div class="empty-state" id="transaction-empty" hidden>
+              <span class="empty-state-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 5h16v14H4z" />
+                  <path d="M8 10h8M8 14h5" />
+                </svg>
+              </span>
+              <h3 id="transaction-empty-title">No transactions yet</h3>
+              <p id="transaction-empty-text"></p>
+            </div>
+
+            <div class="table-footer" id="table-footer" hidden>
+              <span id="table-count"></span>
+            </div>
+          </div>
+        </section>
+
+        <footer class="dashboard-footer">
+          <span>© 2026 SpendWise</span>
+          <span>A TypeScript practice project</span>
+        </footer>
+      </main>
+    </div>
+
+    <dialog
+      id="transaction-dialog"
+      class="transaction-dialog"
+      aria-labelledby="form-title"
+    >
+      <div class="form-header">
+        <h2 id="form-title">Add Transaction</h2>
+
+        <button
+          type="button"
+          class="dialog-close"
+          id="close-transaction-dialog"
+          aria-label="Close form"
+        >
+          ×
+        </button>
+      </div>
+
+      <form id="transaction-form" novalidate>
+        <div class="form-field">
+          <label for="transaction-type">Transaction type</label>
+          <select id="transaction-type" name="type" required>
+            <option value="">Select type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="transaction-title">Title</label>
+          <input
+            id="transaction-title"
+            name="title"
+            type="text"
+            maxlength="60"
+            placeholder="e.g. Monthly Salary"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="transaction-amount">Amount ($)</label>
+            <input
+              id="transaction-amount"
+              name="amount"
+              type="number"
+              min="0.01"
+              step="0.01"
+              placeholder="0.00"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="transaction-date">Date</label>
+            <input id="transaction-date" name="date" type="date" required />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="transaction-category">Category</label>
+          <select id="transaction-category" name="category" required>
+            <option value="">Select a type first</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="transaction-note">Note (optional)</label>
+          <textarea
+            id="transaction-note"
+            name="note"
+            maxlength="200"
+            placeholder="Additional information..."
+          ></textarea>
+        </div>
+
+        <ul id="transaction-errors" class="form-errors" role="alert"></ul>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="button button-secondary"
+            id="cancel-transaction-button"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="button button-primary"
+            id="save-transaction-button"
+          >
+            Save transaction
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <p id="transaction-feedback" class="feedback" aria-live="polite"></p>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
