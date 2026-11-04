@@ -1,6 +1,6 @@
 # 💰 SpendWise — Personal Expense Tracker
 
-\<p align="center">   \<strong>Track your money. Understand your spending. Stay in control.\</strong> \</p>
+<strong>Track your money. Understand your spending. Stay in control.</strong>
 
 ## 🌟 About SpendWise
 
