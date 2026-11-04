@@ -140,4 +140,12 @@ Created as a personal Computer Science learning project.
 
 ---
 
-\<p align="center">   \<strong>💚 Spend wisely. Keep track. Make better decisions.\</strong> \</p>
+<p align="center"><strong>💚 Spend wisely. Keep track. Make better decisions.\</strong></p>
+
+
+
+
+
+
+
+
