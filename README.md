@@ -75,7 +75,7 @@ Follow these steps to run SpendWise on your computer.
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/Kasibzinar/spendWise
 ```
 
 ### 2. Open the project folder
